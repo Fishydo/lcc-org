@@ -1,0 +1,74 @@
+  <canvas id="background-canvas"></canvas>
+  <div id="vanta-bg"></div>
+  <div id="vanta-curtain"></div>
+  <div id="preloader"><div class="loader"></div></div>
+  <div id="cursor"><div class="dot"></div></div>
+  <nav id="nav">
+    <a href="#" data-page="home" class="active">Home</a>
+    <a href="#" data-page="about">games</a>
+    <a href="#" data-page="contact">lcc ai</a>
+    <a href="#" data-page="apps">apps</a>
+  </nav>
+  <main id="content" role="main"></main>
+
+  <!-- Movie/TV Player -->
+  <div id="movie-player">
+    <div class="close-btn" id="close-player-btn">✕</div>
+    <iframe id="movie-iframe" allowfullscreen></iframe>
+    <div id="movie-loading">Please wait, loading... (may take a moment)</div>
+  </div>
+
+  <!-- TV Episode Selector Modal -->
+  <div id="tv-modal">
+    <div class="modal-box">
+      <h2 id="tv-modal-title">Select Episode</h2>
+      <div class="subtitle">Choose season &amp; episode to watch</div>
+      <div class="se-row">
+        <div class="se-group">
+          <label>Season</label>
+          <input type="number" id="tv-season" min="1" value="1">
+        </div>
+        <div class="se-group">
+          <label>Episode</label>
+          <input type="number" id="tv-episode" min="1" value="1">
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="primary" id="tv-play-btn" style="width:100%;margin:0;">▶ Play</button>
+        <button class="theme-button" id="tv-cancel-btn" style="width:100%;justify-content:center;">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blackout: hides flash of unstyled content; removed instantly if security is off -->
+  <div id="sec-blackout"></div>
+
+  <!-- Security Overlay — fullscreen Error 404 iframe, no visible UI -->
+  <div id="security-overlay">
+    <iframe id="security-iframe" src="" title="Error 404" allowfullscreen></iframe>
+    <div id="security-shield" tabindex="0"></div>
+  </div>
+
+
+
+  <!-- AudioEngine hidden YT container -->
+  <div id="audio-engine-container" style="position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;"></div>
+
+  <!-- Mini Player -->
+  <div id="lcc-miniplayer">
+    <div class="mp-drag" id="mp-drag-handle"></div>
+    <div class="mp-body">
+      <img class="mp-art" id="mp-art" src="" alt="" onclick="window._mpGoMusic && window._mpGoMusic()">
+      <div class="mp-info">
+        <div class="mp-track" id="mp-track">No track</div>
+        <div class="mp-artist" id="mp-artist">—</div>
+      </div>
+      <div class="mp-ctrls">
+        <button class="mp-btn" id="mp-prev" title="Prev">⏮</button>
+        <button class="mp-btn mp-play-btn" id="mp-playpause" title="Play/Pause">▶</button>
+        <button class="mp-btn" id="mp-next" title="Next">⏭</button>
+        <button class="mp-btn mp-pip-btn" id="mp-pip-btn" title="Pop out player">⧉</button>
+      </div>
+    </div>
+    <div class="mp-prog-bar" id="mp-prog-bar"><div class="mp-prog-fill" id="mp-prog-fill"></div></div>
+  </div>
